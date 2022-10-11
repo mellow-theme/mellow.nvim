@@ -93,32 +93,7 @@ let g:mellow_bold_functions = 1
 colorscheme mellow
 ```
 
-## Preview
-
-### Terminal
-![Screenshot 2022-03-28 at 2 25 58 PM](https://user-images.githubusercontent.com/1040966/160364806-458a5dad-5f2a-4a78-885b-a041d5ec5010.png)
-
-### Markdown
-![Screenshot 2022-03-28 at 2 08 06 PM](https://user-images.githubusercontent.com/1040966/160364881-94c94648-8761-4310-aa7f-a6d6b4c09f09.png)
-
-### Rust
-![Screenshot 2022-03-28 at 2 20 33 PM](https://user-images.githubusercontent.com/1040966/160364965-fd1342fb-392d-40e7-ab6c-224eae939f70.png)
-
-### HTML
-![Screenshot 2022-03-28 at 2 23 42 PM](https://user-images.githubusercontent.com/1040966/160365047-bbf15000-233a-497a-9755-9ca93e4aaaed.png)
-
-### JavaScript
-![Screenshot 2022-03-28 at 2 23 15 PM](https://user-images.githubusercontent.com/1040966/160365120-6fa24c8d-4c95-4fd9-83fc-095445b6f291.png)
-
-### JSX
-![Screenshot 2022-03-28 at 2 21 08 PM](https://user-images.githubusercontent.com/1040966/160365247-726c1804-df28-4fe3-bb1d-9f972a2890d8.png)
-
-### Lua
-![Screenshot 2022-03-28 at 2 12 40 PM](https://user-images.githubusercontent.com/1040966/160365410-5adabe98-660b-4a12-909e-88c5f5ff080c.png)
-
-
 ## Extras
 
 - alacritty color theme: `extras/alacritty/mellow.yaml`
 - kitty color theme: `extras/kitty/mellow.conf`
-- iterm color theme: `extras/iterm/mellow.itermcolors`
