@@ -1,10 +1,27 @@
 # Mellow
 
-A dark mellow colorscheme for neovim.
+A soothing dark color scheme for neovim.
+
+## Preview
+
+### Terminal (kitty)
+<img width="1673" alt="Screenshot of mellow theme in kitty" src="https://user-images.githubusercontent.com/1040966/196249241-173a1636-b74f-4767-b27f-2b3ed02cea26.png">
+
+### Javascript (JSX)
+<img width="1673" alt="Screenshot of mellow theme JS/JSX" src="https://user-images.githubusercontent.com/1040966/196249265-d122fee2-b14f-4c80-9678-f949487755d4.png">
+
+### HTML
+<img width="1673" alt="Screenshot of mellow theme HTML" src="https://user-images.githubusercontent.com/1040966/196249274-5846ea9e-cf02-4ec8-9bae-53b900539ee8.png">
+
+### Clojure
+<img width="1673" alt="Screenshot of mellow theme Clojure" src="https://user-images.githubusercontent.com/1040966/196249280-c68a6c20-18b8-4747-9a66-dac28e864457.png">
+
+### Rust
+<img width="1673" alt="Screenshot of mellow theme Rust" src="https://user-images.githubusercontent.com/1040966/196249282-20f2097a-1467-4365-9c99-4f7957e98aec.png">
 
 ## Features
 
-- Supports the latest neovim `0.8` features like TreeSitter and LSP.
+- Supports the latest neovim `0.8`.
 - Terminal colors inside neovim.
 
 ### Plugin Support
