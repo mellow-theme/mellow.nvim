@@ -114,3 +114,4 @@ colorscheme mellow
 
 - alacritty color theme: `extras/alacritty/mellow.yaml`
 - kitty color theme: `extras/kitty/mellow.conf`
+- wezterm color theme: `extras/wezterm/colors/mellow.toml`
