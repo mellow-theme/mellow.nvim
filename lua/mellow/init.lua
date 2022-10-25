@@ -1,4 +1,5 @@
 local variants = require("mellow.colors")
+local utils = require("mellow.utils")
 local cfg = require("mellow.config").config
 local c = variants[cfg.variant]
 local M = {}
@@ -27,21 +28,21 @@ end
 local set_groups = function()
   local highlights = {
     -- Syntax Groups (descriptions and ordering from `:h w18`)
-    { hg = "Comment", fg = c.gray05, gui = "italic", cterm = "italic" }, -- any comment
+    { hg = "Comment", fg = c.gray05, gui = cfg.comment_style }, -- any comment
     { hg = "Constant", fg = c.cyan }, -- any constant
     { hg = "String", fg = c.green }, -- a string constant: "this is a string"
     { hg = "Character", fg = c.green }, -- a character constant: 'c', '\n'
     { hg = "Number", fg = c.magenta }, -- a number constant: 234, 0xff
-    { hg = "Boolean", fg = c.yellow }, -- a boolean constant: TRUE, false
+    { hg = "Boolean", fg = c.yellow, cfg.boolean_style }, -- a boolean constant: TRUE, false
     { hg = "Float", fg = c.magenta }, -- a floating point constant: 2.3e10
-    { hg = "Identifier", fg = c.fg }, -- any variable name
-    { hg = "Function", fg = c.white }, -- function name (also: methods for classes)
+    { hg = "Identifier", fg = c.fg, cfg.variable_style }, -- any variable name
+    { hg = "Function", fg = c.white, gui = cfg.function_style }, -- function name (also: methods for classes)
     { hg = "Statement", fg = c.white }, -- any statement
     { hg = "Conditional", fg = c.blue }, -- if, then, else, endif, switch, etc.
     { hg = "Repeat", fg = c.blue }, -- for, do, while, etc.
     { hg = "Label", fg = c.blue }, -- case, default, etc.
     { hg = "Operator", fg = c.yellow }, -- sizeof", "+", "*", etc.
-    { hg = "Keyword", fg = c.blue }, -- any other keyword
+    { hg = "Keyword", fg = c.blue, gui = cfg.keyword_style }, -- any other keyword
     { hg = "Exception", fg = c.purple }, -- try, catch, throw
     { hg = "PreProc", fg = c.cyan }, -- generic Preprocessor
     { hg = "Include", fg = c.blue }, -- preprocessor #include
@@ -58,7 +59,7 @@ local set_groups = function()
     { hg = "Delimiter" }, -- character that needs attention
     { hg = "SpecialComment", fg = c.gray05 }, -- special things inside a comment
     { hg = "Debug" }, -- debugging statements
-    { hg = "Underlined", gui = "underline", cterm = "underline" }, -- text that stands out, HTML links
+    { hg = "Underlined", gui = "underline" }, -- text that stands out, HTML links
     { hg = "Ignore" }, -- left blank, hidden
     { hg = "Error", fg = c.red }, -- any erroneous construct
     { hg = "Todo", fg = c.yellow }, -- anything that needs extra attention; mostly the keywords TODO FIXME and XXX
@@ -95,7 +96,7 @@ local set_groups = function()
     { hg = "QuickFixLine", fg = c.cyan, bg = c.gray02 }, -- Current quickfix item in the quickfix window.
     { hg = "Search", fg = c.yellow, bg = c.black }, -- Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
     { hg = "SpecialKey", fg = c.special_grey }, -- Meta and special keys listed with " =map", also for text used to show unprintable characters in the text, 'listchars'. Generally: text that is displayed differently from what it really is.
-    { hg = "SpellBad", fg = c.red, gui = "underline", cterm = "underline" }, -- Word that is not recognized by the spellchecker. This will be combined with the highlighting used otherwise.
+    { hg = "SpellBad", fg = c.red, gui = "underline" }, -- Word that is not recognized by the spellchecker. This will be combined with the highlighting used otherwise.
     { hg = "SpellCap", fg = c.yellow }, -- Word that should start with a capital. This will be combined with the highlighting used otherwise.
     { hg = "SpellLocal", fg = c.yellow }, -- Word that is recognized by the spellchecker as one that is used in another region. This will be combined with the highlighting used otherwise.
     { hg = "SpellRare", fg = c.yellow }, -- Word that is recognized by the spellchecker as one that is hardly ever used. spell This will be combined with the highlighting used otherwise.
@@ -116,7 +117,7 @@ local set_groups = function()
     { hg = "WinbarNC", fg = c.gray05, bg = c.bg_dark }, -- Winbar non-current windows.
 
     -- HTML
-    { hg = "htmlArg", fg = c.bright_blue, gui = "italic", cterm = "italic" }, -- attributes
+    { hg = "htmlArg", fg = c.bright_blue, gui = "italic" }, -- attributes
     { hg = "htmlEndTag", fg = c.gray06 }, -- end tag />
     { hg = "htmlTitle", fg = c.gray07 }, -- title tag text
     { hg = "htmlTag", fg = c.gray06 }, -- tag delimiters
@@ -124,34 +125,36 @@ local set_groups = function()
     { hg = "htmlTagName", fg = c.cyan }, -- tag text
 
     -- Tree sitter
+    { hg = "@boolean", fg = c.yellow, gui = cfg.boolean_style },
+    { hg = "@constructor", fg = c.gray06 },
+    { hg = "@constant.builtin", fg = c.yellow },
+    { hg = "@namespace", fg = c.cyan, gui = "italic" },
     { hg = "@parameter", fg = c.cyan },
     { hg = "@property", fg = c.gray07 },
     { hg = "@punctuation", fg = c.gray06 },
     { hg = "@punctuation.delimiter", fg = c.gray06 },
     { hg = "@punctuation.bracket", fg = c.gray06 },
-    { hg = "@constructor", fg = c.gray06 },
-    { hg = "@constant.builtin", fg = c.yellow },
-    { hg = "@namespace", fg = c.cyan, gui = "italic", cterm = "italic" },
     { hg = "@symbol", fg = c.yellow },
-    { hg = "@type.builtin", fg = c.magenta },
     { hg = "@tag", fg = c.cyan },
-    { hg = "@tag.attribute", fg = c.bright_blue, gui = "italic", cterm = "italic" },
+    { hg = "@tag.attribute", fg = c.bright_blue, gui = "italic" },
     { hg = "@tag.delimiter", fg = c.gray06 },
-    { hg = "@variable.parameter", fg = c.cyan },
+    { hg = "@type.builtin", fg = c.magenta },
+    { hg = "@variable", fg = c.fg, gui = cfg.variable_style },
+    { hg = "@variable.parameter", fg = c.cyan, gui = cfg.variable_style },
     -- Tree sitter language specific overrides
-    { hg = "@keyword.clojure", fg = c.bright_cyan },
-    { hg = "@keyword.function.clojure", fg = c.bright_cyan },
     { hg = "@constructor.javascript", fg = c.yellow },
+    { hg = "@keyword.clojure", fg = c.bright_cyan, gui = cfg.keyword_style },
+    { hg = "@keyword.function.clojure", fg = c.bright_cyan, gui = cfg.function_style },
 
     -- Diagnostics
     { hg = "DiagnosticError", fg = c.red },
     { hg = "DiagnosticWarn", fg = c.yellow },
     { hg = "DiagnosticInfo", fg = c.blue },
     { hg = "DiagnosticHint", fg = c.cyan },
-    { hg = "DiagnosticUnderlineError", fg = c.red, gui = "underline", cterm = "underline" },
-    { hg = "DiagnosticUnderlineWarn", fg = c.yellow, gui = "underline", cterm = "underline" },
-    { hg = "DiagnosticUnderlineInfo", fg = c.blue, gui = "underline", cterm = "underline" },
-    { hg = "DiagnosticUnderlineHint", fg = c.cyan, gui = "underline", cterm = "underline" },
+    { hg = "DiagnosticUnderlineError", fg = c.red, gui = "underline" },
+    { hg = "DiagnosticUnderlineWarn", fg = c.yellow, gui = "underline" },
+    { hg = "DiagnosticUnderlineInfo", fg = c.blue, gui = "underline" },
+    { hg = "DiagnosticUnderlineHint", fg = c.cyan, gui = "underline" },
 
     -- Neovim's built-in language server client
     { hg = "LspReferenceWrite", fg = c.blue, gui = "underline" },
@@ -175,19 +178,7 @@ local set_groups = function()
     { hg = "diffIndexLine", fg = c.magenta },
   }
 
-  local highlight_cmds = {}
-  for idx = 1, #highlights do
-    local highlight = highlights[idx]
-    highlight_cmds[idx] = string.format(
-      "highlight %s guifg=%s guibg=%s gui=%s guisp=%s",
-      highlight.hg,
-      highlight.fg or "NONE",
-      highlight.bg or "NONE",
-      highlight.gui or "NONE",
-      highlight.guisp or "NONE"
-    )
-  end
-  vim.cmd(table.concat(highlight_cmds, "\n"))
+  utils.highlight(highlights)
 end
 
 M.colorscheme = function()
