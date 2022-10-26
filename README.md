@@ -93,7 +93,6 @@ colorscheme mellow
 | mellow_bold_functions   | `false` | Make functions bold      |
 | mellow_bold_variables   | `false` | Make variables bold      |
 | mellow_transparent      | `false` | Disable background color |
-| mellow_variant          | `dark`  | Colorscheme variant      |
 
 ```lua
 -- Example config in lua
@@ -122,3 +121,7 @@ colorscheme mellow
 - alacritty color theme: `extras/alacritty/mellow.yaml`
 - kitty color theme: `extras/kitty/mellow.conf`
 - wezterm color theme: `extras/wezterm/colors/mellow.toml`
+
+## Credits
+
+- [Pascal](https://pabue.co/) for making a fantastic tool to work with colors: [hue.tools](https://hue.tools/?format=hex)
