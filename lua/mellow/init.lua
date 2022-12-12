@@ -124,6 +124,31 @@ local set_groups = function()
     { hg = "htmlTagN", fg = c.gray06 },
     { hg = "htmlTagName", fg = c.cyan }, -- tag text
 
+    -- Markdown
+    { hg = "markdownH1", fg = c.bright_blue, gui = "bold" },
+    { hg = "markdownH2", fg = c.bright_blue, gui = "bold" },
+    { hg = "markdownH3", fg = c.bright_blue, gui = "bold" },
+    { hg = "markdownH4", fg = c.bright_blue, gui = "bold" },
+    { hg = "markdownH5", fg = c.bright_blue, gui = "bold" },
+    { hg = "markdownH6", fg = c.bright_blue, gui = "bold" },
+    { hg = "markdownHeadingDelimiter", fg = c.gray05 },
+    { hg = "markdownHeadingRule", fg = c.gray05 },
+    { hg = "markdownId", fg = c.cyan },
+    { hg = "markdownIdDeclaration", fg = c.blue },
+    { hg = "markdownIdDelimiter", fg = c.cyan },
+    { hg = "markdownLinkDelimiter", fg = c.gray05 },
+    { hg = "markdownLinkText", fg = c.blue, gui = "italic" },
+    { hg = "markdownListMarker", fg = c.gray05 },
+    { hg = "markdownOrderedListMarker", fg = c.gray05 },
+    { hg = "markdownRule", fg = c.gray05 },
+    { hg = "markdownUrl", fg = c.green, bg = c.none },
+    { hg = "markdownBlockquote", fg = c.gray07 },
+    { hg = "markdownBold", fg = c.fg, bg = c.none, gui = "bold" },
+    { hg = "markdownItalic", fg = c.fg, bg = c.none, gui = "italic" },
+    { hg = "markdownCode", fg = c.yellow },
+    { hg = "markdownCodeBlock", fg = c.yellow },
+    { hg = "markdownCodeDelimiter", fg = c.gray05 },
+
     -- Tree sitter
     { hg = "@boolean", fg = c.yellow, gui = cfg.boolean_style },
     { hg = "@constructor", fg = c.gray06 },
