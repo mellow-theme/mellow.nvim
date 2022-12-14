@@ -201,6 +201,14 @@ local set_groups = function()
     { hg = "diffFile", fg = c.gray05 },
     { hg = "diffLine", fg = c.cyan },
     { hg = "diffIndexLine", fg = c.magenta },
+
+    -- Hop
+    { hg = "HopNextKey", fg = c.bright_yellow },
+    { hg = "HopNextKey1", fg = c.bright_blue },
+    { hg = "HopNextKey2", fg = c.bright_cyan },
+    { hg = "HopUnmatched", fg = c.gray04 },
+    { hg = "HopCursor", fg = c.bright_cyan },
+    { hg = "HopPreview", fg = c.bright_blue },
   }
 
   utils.highlight(highlights)
