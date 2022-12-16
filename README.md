@@ -41,6 +41,7 @@ A soothing dark color scheme for neovim.
 - [WhichKey](https://github.com/liuchengxu/vim-which-key)
 - [Indent Blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
 - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
+- [hop.nvim](https://github.com/phaazon/hop.nvim)
 
 ## Requirements
 
@@ -122,6 +123,11 @@ colorscheme mellow
 - kitty color theme: `extras/kitty/mellow.conf`
 - wezterm color theme: `extras/wezterm/colors/mellow.toml`
 - iterm2 color theme: `extras/iterm2/mellow.itermcolors`
+- terminator color theme: `extras/terminator/mellow.config`
+
+### Helix
+
+- Included in [helix](https://helix-editor.com/) since `22.12`.
 
 ## Credits
 
