@@ -87,7 +87,7 @@ local set_groups = function()
     { hg = "ModeMsg" }, --' showmode' message (e.g., "-- INSERT --")
     { hg = "MoreMsg" }, -- more-prompt
     { hg = "NonText", fg = c.gray02 }, --'~' and '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line).
-    { hg = "Normal", fg = c.fg, bg = c.bg }, -- normal text
+    { hg = "Normal", fg = c.fg, bg = cfg.transparent and c.none or c.bg }, -- normal text
     { hg = "Pmenu", fg = c.white, bg = c.black }, -- Popup menu: normal item.
     { hg = "PmenuSel", fg = c.bright_white, bg = c.gray03 }, -- Popup menu: selected item.
     { hg = "PmenuSbar", bg = c.gray02 }, -- Popup menu: scrollbar.
