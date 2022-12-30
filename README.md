@@ -28,8 +28,9 @@ A soothing dark color scheme for neovim.
 
 ## Features
 
-- Supports the latest neovim `0.8`.
+- Supports neovim versions `0.8` and above.
 - Terminal colors inside neovim.
+- Color themes for various applications and terminal emulators: [extras](#extras).
 
 ### Plugin Support
 
@@ -45,7 +46,7 @@ A soothing dark color scheme for neovim.
 
 ## Requirements
 
-- Neovim >= 0.8.0
+- Neovim >= `0.8.0`
 
 ## Installation
 
@@ -119,15 +120,23 @@ colorscheme mellow
 
 ## Extras
 
-- alacritty color theme: `extras/alacritty/mellow.yaml`
-- kitty color theme: `extras/kitty/mellow.conf`
-- wezterm color theme: `extras/wezterm/colors/mellow.toml`
-- iterm2 color theme: `extras/iterm2/mellow.itermcolors`
-- terminator color theme: `extras/terminator/mellow.config`
+Color themes for various applications and terminal emulators.
+
+### Terminals
+
+- alacritty - `extras/alacritty/mellow.yaml`
+- kitty - `extras/kitty/mellow.conf`
+- wezterm - `extras/wezterm/colors/mellow.toml`
+- iterm2 - `extras/iterm2/mellow.itermcolors`
+- terminator - `extras/terminator/mellow.config`
 
 ### Helix
 
 - Included in [helix](https://helix-editor.com/) since `22.12`.
+
+### Eclipse
+
+- `extras/eclipse/mellow.xml`
 
 ## Credits
 
