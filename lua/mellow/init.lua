@@ -209,6 +209,17 @@ local set_groups = function()
     { hg = "HopUnmatched", fg = c.gray04 },
     { hg = "HopCursor", fg = c.bright_cyan },
     { hg = "HopPreview", fg = c.bright_blue },
+
+    -- Cmp
+    { hg = "CmpItemAbbrDeprecated", fg = c.gray06, gui = "strikethrough" },
+    { hg = "CmpItemAbbrMatch", fg = c.blue, gui = "bold" },
+    { hg = "CmpItemAbbrMatchFuzzy", fg = c.blue, gui = "bold" },
+    { hg = "CmpItemMenu", fg = c.gray05 },
+    { hg = "CmpItemKindText", fg = c.gray06 },
+    { hg = "CmpItemKindFunction", fg = c.cyan },
+    { hg = "CmpItemKindVariable", fg = c.bright_white },
+    { hg = "CmpItemKindEnum", fg = c.green },
+    { hg = "CmpItemKindSnippet", fg = c.yellow },
   }
 
   utils.highlight(highlights)
