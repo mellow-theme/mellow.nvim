@@ -129,6 +129,7 @@ Color themes for various applications and terminal emulators.
 - wezterm - `extras/wezterm/colors/mellow.toml`
 - iterm2 - `extras/iterm2/mellow.itermcolors`
 - terminator - `extras/terminator/mellow.config`
+- foot - `extras/foot/mellow.ini`
 
 ### Helix
 
