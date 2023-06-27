@@ -144,6 +144,12 @@ Color themes for various applications and terminal emulators.
 
 - `extras/eclipse/mellow.xml`
 
+### Delta
+
+- Included in [delta](https://github.com/dandavison/delta) since `23.06`.
+  - Download the config [here](https://github.com/dandavison/delta/blob/master/themes.gitconfig).
+  - See [https://dandavison.github.io/delta/custom-themes.html](https://dandavison.github.io/delta/custom-themes.html) for setup instructions.
+
 ## Credits
 
 - [Pascal](https://pabue.co/) for making a fantastic tool to work with colors: [hue.tools](https://hue.tools/?format=hex)
