@@ -2,8 +2,6 @@
 
 A soothing dark color scheme for neovim.
 
-# Mellow theme has moved to https://github.com/mellow-theme/mellow.nvim
-
 ## Preview
 
 ### Terminal (kitty)
