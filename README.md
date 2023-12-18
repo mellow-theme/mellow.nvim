@@ -2,7 +2,7 @@
 
 A soothing dark color scheme for neovim.
 
-# Mellow theme has moved to mellow-theme/mellow.nvim <https://github.com/mellow-theme/mellow.nvim>
+# Mellow theme has moved to [mellow-theme/mellow.nvim] <https://github.com/mellow-theme/mellow.nvim>
 
 ## Preview
 
