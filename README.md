@@ -2,7 +2,7 @@
 
 A soothing dark color scheme for neovim.
 
-# Mellow theme has moved to [mellow-theme/mellow.nvim] <https://github.com/mellow-theme/mellow.nvim>
+# Mellow theme has moved to https://github.com/mellow-theme/mellow.nvim
 
 ## Preview
 
@@ -64,13 +64,13 @@ Install the theme with your preferred package manager:
 [vim-plug](https://github.com/junegunn/vim-plug)
 
 ```vim
-Plug 'kvrohit/mellow.nvim'
+Plug 'mellow-theme/mellow.nvim'
 ```
 
 [packer](https://github.com/wbthomason/packer.nvim)
 
 ```lua
-use 'kvrohit/mellow.nvim'
+use 'mellow-themekvrohit/mellow.nvim'
 ```
 
 ## Usage
