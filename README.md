@@ -70,7 +70,7 @@ Plug 'mellow-theme/mellow.nvim'
 [packer](https://github.com/wbthomason/packer.nvim)
 
 ```lua
-use 'mellow-themekvrohit/mellow.nvim'
+use 'mellow-theme/mellow.nvim'
 ```
 
 ## Usage
