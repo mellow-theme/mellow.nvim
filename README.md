@@ -62,13 +62,13 @@ Install the theme with your preferred package manager:
 [vim-plug](https://github.com/junegunn/vim-plug)
 
 ```vim
-Plug 'mellow-theme/mellow.nvim'
+Plug 'kvrohit/mellow.nvim'
 ```
 
 [packer](https://github.com/wbthomason/packer.nvim)
 
 ```lua
-use 'mellow-theme/mellow.nvim'
+use 'kvrohit/mellow.nvim'
 ```
 
 ## Usage

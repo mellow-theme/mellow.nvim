@@ -311,7 +311,6 @@ local set_groups = function()
     { hg = "NotifyINFOBody", fg = c.white, bg = cfg.transparent and c.none or c.bg },
     { hg = "NotifyDEBUGBody", fg = c.white, bg = cfg.transparent and c.none or c.bg },
     { hg = "NotifyTRACEBody", fg = c.white, bg = cfg.transparent and c.none or c.bg },
-    vim.print("Mellow.nvim has moved to mellow-theme/mellow.nvim")
   }
 
   utils.highlight(highlights)
