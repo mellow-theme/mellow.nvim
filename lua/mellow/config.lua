@@ -14,13 +14,13 @@ end
 
 local function style(italic, bold)
   if italic and bold then
-    return "bold,italic"
+    return { bold = true, italic = true }
   elseif italic then
-    return "italic"
+    return { italic = true }
   elseif bold then
-    return "bold"
+    return { bold = true }
   else
-    return "NONE"
+    return {}
   end
 end
 
