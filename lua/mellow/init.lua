@@ -89,6 +89,8 @@ local set_groups = function()
     -- { hg = "MoreMsg" }, -- more-prompt
     ["NonText"] = { fg = c.gray02 }, --'~' and '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line).
     ["Normal"] = { fg = c.fg, bg = cfg.transparent and c.none or c.bg }, -- normal text
+    ["NormalNC"] = { fg = c.fg, bg = cfg.transparent and c.none or c.bg_dark }, -- normal text
+    ["NormalFloat"] = { bg = c.gray01 },
     ["Pmenu"] = { fg = c.white, bg = c.black }, -- Popup menu: normal item.
     ["PmenuSel"] = { fg = c.bright_white, bg = c.gray03 }, -- Popup menu: selected item.
     ["PmenuSbar"] = { bg = c.gray02 }, -- Popup menu: scrollbar.
@@ -311,6 +313,11 @@ local set_groups = function()
     ["NotifyINFOBody"] = { fg = c.white, bg = cfg.transparent and c.none or c.bg },
     ["NotifyDEBUGBody"] = { fg = c.white, bg = cfg.transparent and c.none or c.bg },
     ["NotifyTRACEBody"] = { fg = c.white, bg = cfg.transparent and c.none or c.bg },
+
+    -- NeoTree
+    ["NeoTreeFloatBorder"] = { fg = c.gray03, bg = c.none },
+    ["NeoTreeFloatTitle"] = { fg = c.gray05, bg = c.gray07 },
+    ["NeoTreeTitleBar"] = { fg = c.gray05, bg = c.gray01 },
   }
 
   for name, val in pairs(highlights) do
