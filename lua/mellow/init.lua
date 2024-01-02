@@ -77,10 +77,12 @@ local set_groups = function()
     { hg = "DiffText", bg = c.yellow, fg = c.black }, -- diff mode: Changed text within a changed line
     { hg = "ErrorMsg", fg = c.red }, -- error messages on the command line
     { hg = "VertSplit", fg = c.gray02 }, -- the column separating vertically split windows
+    { hg = "WinSeparator", fg = c.gray02 }, -- the column separating vertically split windows
     { hg = "Folded", fg = c.gray04 }, -- line used for closed folds
     { hg = "FoldColumn" }, --' foldcolumn'
     { hg = "SignColumn" }, -- column where signs are displayed
-    { hg = "IncSearch", fg = c.bright_yellow, bg = c.gray03 }, --' incsearch' highlighting; also used for the text replaced with ":s///c"
+    { hg = "IncSearch", fg = c.black, bg = c.yellow }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+    { hg = "CurSearch", fg = c.black, bg = c.yellow }, -- 'cursearch' highlighting; also used for the text replaced with ":s///c"
     { hg = "LineNr", fg = c.gray04 }, -- Line number for " =number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     { hg = "CursorLineNr" }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
     { hg = "MatchParen", fg = c.yellow, gui = "underline", cterm = "underline" }, -- The character under the cursor or just before it, if it is a paired bracket, and its match.
@@ -94,7 +96,7 @@ local set_groups = function()
     { hg = "PmenuThumb", bg = c.gray03 }, -- Popup menu: Thumb of the scrollbar.
     { hg = "Question", fg = c.blue }, -- hit-enter prompt and yes/no questions
     { hg = "QuickFixLine", fg = c.cyan, bg = c.gray02 }, -- Current quickfix item in the quickfix window.
-    { hg = "Search", fg = c.yellow, bg = c.black }, -- Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
+    { hg = "Search", fg = c.bright_yellow, bg = c.black }, -- Last search pattern highlighting (see 'hlsearch'). Also used for similar items that need to stand out.
     { hg = "SpecialKey", fg = c.special_grey }, -- Meta and special keys listed with " =map", also for text used to show unprintable characters in the text, 'listchars'. Generally: text that is displayed differently from what it really is.
     { hg = "SpellBad", fg = c.red, gui = "underline" }, -- Word that is not recognized by the spellchecker. This will be combined with the highlighting used otherwise.
     { hg = "SpellCap", fg = c.yellow }, -- Word that should start with a capital. This will be combined with the highlighting used otherwise.
