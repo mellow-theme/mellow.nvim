@@ -26,7 +26,6 @@ end
 
 local set_groups = function()
   local highlights = {
-    -- Syntax Groups (descriptions and ordering from `:h w18`)
     ["Comment"] = { fg = c.gray05, style = cfg.comment_style }, -- any comment
     ["Constant"] = { fg = c.cyan }, -- any constant
     ["String"] = { fg = c.green }, -- a string constant: "this is a string"
@@ -55,19 +54,18 @@ local set_groups = function()
     ["Special"] = { fg = c.blue }, -- any special symbol
     ["SpecialChar"] = { fg = c.yellow }, -- special character in a constant
     ["Tag"] = { fg = c.yellow }, -- you can use CTRL-] on this
-    -- { hg = "Delimiter" }, -- character that needs attention
     ["SpecialComment"] = { fg = c.gray05 }, -- special things inside a comment
-    -- { hg = "Debug" }, -- debugging statements
+    ["Debug"] = { fg = c.yellow }, -- debugging statements
     ["Underlined"] = { underline = true }, -- text that stands out, HTML links
-    -- { hg = "Ignore" }, -- left blank, hidden
     ["Error"] = { fg = c.red }, -- any erroneous construct
     ["Todo"] = { fg = c.yellow }, -- anything that needs extra attention; mostly the keywords TODO FIXME and XXX
-    --
+
     -- Highlighting Groups (descriptions and ordering from ` =h highlight-groups`) {{{
     ["ColorColumn"] = { bg = c.gray01 }, -- used for the columns set with 'colorcolumn'
-    -- { hg = "Conceal" }, -- placeholder characters substituted for concealed text (see 'conceallevel')
-    ["Cursor"] = { fg = c.black, bg = c.blue }, -- the character under the cursor
-    -- { hg = "CursorIM" }, -- like Cursor, but used when in IME mode
+    ["Conceal"] = { fg = c.gray01 }, -- placeholder characters substituted for concealed text (see 'conceallevel')
+    ["Cursor"] = { fg = c.black, bg = c.fg }, -- the character under the cursor
+    ["lCursor"] = { fg = c.black, bg = c.fg }, -- the character under the cursor
+    ["CursorIM"] = { fg = c.black, bg = c.fg }, -- the character under the cursor
     ["CursorLine"] = { bg = c.gray01 }, -- the screen line that the cursor is in when 'cursorline' is set
     ["Directory"] = { fg = c.blue }, -- directory names (and other special names in listings)
     ["DiffAdd"] = { bg = c.green, fg = c.black }, -- diff mode: Added line
@@ -78,19 +76,20 @@ local set_groups = function()
     ["VertSplit"] = { fg = c.gray02 }, -- the column separating vertically split windows
     ["WinSeparator"] = { fg = c.gray02 }, -- the column separating vertically split windows
     ["Folded"] = { fg = c.gray04 }, -- line used for closed folds
-    -- { hg = "FoldColumn" }, --' foldcolumn'
-    -- { hg = "SignColumn" }, -- column where signs are displayed
+    ["FoldColumn"] = { bg = cfg.transparent and c.none or c.bg, fg = c.gray05 }, -- column where folds are displayed
+    ["SignColumn"] = { bg = cfg.transparent and c.none or c.bg, fg = c.gray05 }, -- column where signs are displayed
     ["IncSearch"] = { fg = c.black, bg = c.yellow }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     ["CurSearch"] = { fg = c.black, bg = c.yellow }, -- 'cursearch' highlighting; also used for the text replaced with ":s///c"
     ["LineNr"] = { fg = c.gray04 }, -- Line number for " =number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-    -- { hg = "CursorLineNr" }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+    ["CursorLineNr"] = { fg = c.gray06 }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
     ["MatchParen"] = { fg = c.yellow, underline = true }, -- The character under the cursor or just before it, if it is a paired bracket, and its match.
-    -- { hg = "ModeMsg" }, --' showmode' message (e.g., "-- INSERT --")
-    -- { hg = "MoreMsg" }, -- more-prompt
+    ["ModeMsg"] = { fg = c.gray03, bold = true }, --' showmode' message (e.g., "-- INSERT --")
+    ["MoreMsg"] = { fg = c.bright_magenta }, -- more-prompt
     ["NonText"] = { fg = c.gray02 }, --'~' and '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line).
     ["Normal"] = { fg = c.fg, bg = cfg.transparent and c.none or c.bg }, -- normal text
     ["NormalNC"] = { fg = c.fg, bg = cfg.transparent and c.none or c.bg_dark }, -- normal text
-    ["NormalFloat"] = { bg = c.gray01 },
+    ["NormalFloat"] = { fg = c.white, bg = c.bg }, -- Normal text in floating windows.
+    ["FloatBorder"] = { fg = c.gray03, bg = c.bg }, -- Border of floating windows.
     ["Pmenu"] = { fg = c.white, bg = c.black }, -- Popup menu: normal item.
     ["PmenuSel"] = { fg = c.bright_white, bg = c.gray03 }, -- Popup menu: selected item.
     ["PmenuSbar"] = { bg = c.gray02 }, -- Popup menu: scrollbar.
@@ -108,7 +107,7 @@ local set_groups = function()
     ["StatusLineTerm"] = { fg = c.white, bg = c.gray01 }, -- status line of current :terminal window
     ["StatusLineTermNC"] = { fg = c.gray05 }, -- status line of non-current  =terminal window
     ["TabLine"] = { fg = c.gray05 }, -- tab pages line, not active tab page label
-    -- { hg = "TabLineFill" }, -- tab pages line, where there are no labels
+    ["TabLineFill"] = { bg = c.black }, -- tab pages line, where there are no labels
     ["TabLineSel"] = { fg = c.white }, -- tab pages line, active tab page label
     ["Terminal"] = { fg = c.fg, bg = c.black }, -- terminal window (see terminal-size-color)
     ["Title"] = { fg = c.green }, -- titles for output from " =set all", ":autocmd" etc.
@@ -315,9 +314,20 @@ local set_groups = function()
     ["NotifyTRACEBody"] = { fg = c.white, bg = cfg.transparent and c.none or c.bg },
 
     -- NeoTree
-    ["NeoTreeFloatBorder"] = { fg = c.gray03, bg = c.none },
+    ["NeoTreeFloatBorder"] = { fg = c.gray03, bg = c.bg },
     ["NeoTreeFloatTitle"] = { fg = c.gray05, bg = c.gray07 },
     ["NeoTreeTitleBar"] = { fg = c.gray05, bg = c.gray01 },
+
+    -- Telescope
+    ["TelescopeBorder"] = { fg = c.bg, bg = c.bg },
+    ["TelescopeNormal"] = { fg = c.fg, bg = c.bg },
+    ["TelescopePreviewTitle"] = { fg = c.black, bg = c.green, bold = true },
+    ["TelescopeResultsTitle"] = { fg = c.bg, bg = c.bg },
+    ["TelescopePromptTitle"] = { fg = c.black, bg = c.cyan, bold = true },
+    ["TelescopePromptBorder"] = { fg = c.gray01, bg = c.gray01 },
+    ["TelescopePromptNormal"] = { fg = c.gray06, bg = c.gray01 },
+    ["TelescopePromptCounter"] = { fg = c.gray04, bg = c.gray01 },
+    ["TelescopeMatching"] = { fg = c.yellow, underline = true },
   }
 
   for name, val in pairs(highlights) do
