@@ -68,7 +68,7 @@ Plug 'mellow-theme/mellow.nvim'
 [packer](https://github.com/wbthomason/packer.nvim)
 
 ```lua
-use 'mellow-theme/mellow.nvim'
+use("mellow-theme/mellow.nvim")
 ```
 
 ## Usage
@@ -77,7 +77,7 @@ Enable the colorscheme:
 
 ```lua
 -- Lua
-vim.cmd [[colorscheme mellow]]
+vim.cmd([[colorscheme mellow]])
 ```
 
 ```vim
@@ -111,7 +111,7 @@ vim.g.mellow_italic_functions = true
 vim.g.mellow_bold_functions = true
 
 -- Load the colorscheme
-vim.cmd [[colorscheme mellow]]
+vim.cmd([[colorscheme mellow]])
 ```
 
 ```vim
@@ -131,7 +131,7 @@ Color themes for various applications and terminal emulators.
 
 ### Terminals
 
-- alacritty - `extras/alacritty/mellow.yaml`
+- alacritty - `extras/alacritty/mellow.toml`
 - kitty - `extras/kitty/mellow.conf`
 - wezterm - `extras/wezterm/colors/mellow.toml`
 - iterm2 - `extras/iterm2/mellow.itermcolors`
