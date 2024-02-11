@@ -10,7 +10,7 @@ A soothing dark color scheme for neovim.
 
 ### JavaScript (JSX)
 
-![Screenshot of mellow theme JS/JSX]("https://user-images.githubusercontent.com/1040966/196249265-d122fee2-b14f-4c80-9678-f949487755d4.png)
+![Screenshot of mellow theme JS/JSX](https://user-images.githubusercontent.com/1040966/196249265-d122fee2-b14f-4c80-9678-f949487755d4.png)
 
 ### HTML
 
