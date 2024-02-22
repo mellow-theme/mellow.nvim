@@ -24,6 +24,7 @@ M.dark = {
   bright_cyan = "#f591b2",
   bright_white = "#cac9dd",
   -- Grays
+  gray00 = "#18181a",
   gray01 = "#1b1b1d",
   gray02 = "#2a2a2d",
   gray03 = "#3e3e43",

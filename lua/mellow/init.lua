@@ -88,7 +88,7 @@ local set_groups = function()
     ["NonText"] = { fg = c.gray02 }, --'~' and '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line).
     ["Normal"] = { fg = c.fg, bg = cfg.transparent and c.none or c.bg }, -- normal text
     ["NormalNC"] = { fg = c.fg, bg = cfg.transparent and c.none or c.bg_dark }, -- normal text
-    ["NormalFloat"] = { fg = c.white, bg = c.gray01 }, -- Normal text in floating windows.
+    ["NormalFloat"] = { fg = c.white, bg = c.gray00 }, -- Normal text in floating windows.
     ["FloatBorder"] = { fg = c.gray03, bg = c.bg }, -- Border of floating windows.
     ["Pmenu"] = { fg = c.white, bg = c.black }, -- Popup menu: normal item.
     ["PmenuSel"] = { fg = c.bright_white, bg = c.gray03 }, -- Popup menu: selected item.
