@@ -328,6 +328,15 @@ local set_groups = function()
     ["TelescopePromptNormal"] = { fg = c.gray06, bg = c.gray01 },
     ["TelescopePromptCounter"] = { fg = c.gray04, bg = c.gray01 },
     ["TelescopeMatching"] = { fg = c.yellow, underline = true },
+
+    -- Flash
+    ["FlashBackdrop"] = { link = "Comment" },
+    ["FlashCurrent"] = { link = "IncSearch" },
+    ["FlashCursor"] = { bg = c.bright_blue, fg = c.bg_dark, bold = true },
+    ["FlashLabel"] = { bg = c.cyan, bold = true, fg = c.bg_dark },
+    ["FlashMatch"] = { link = "Search" },
+    ["FlashPrompt"] = { link = "MsgArea" },
+    ["FlashPromptIcon"] = { link = "Special" },
   }
 
   for name, val in pairs(highlights) do
