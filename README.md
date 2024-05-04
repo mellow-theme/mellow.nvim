@@ -50,6 +50,7 @@ A soothing dark color scheme for neovim.
 - [hop.nvim](https://github.com/phaazon/hop.nvim)
 - [nvim-navic](https://github.com/SmiteshP/nvim-navic)
 - [nvim-notify](https://github.com/rcarriga/nvim-notify)
+- [flash.nvim](https://github.com/folke/flash.nvim)
 
 ## Requirements
 
