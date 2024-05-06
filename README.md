@@ -132,6 +132,7 @@ Color themes for various applications and terminal emulators.
 ### Terminals
 
 - alacritty - `extras/alacritty/mellow.toml`
+- bat - `extras/bat/mellow.tmTheme`
 - kitty - `extras/kitty/mellow.conf`
 - wezterm - `extras/wezterm/colors/mellow.toml`
 - iterm2 - `extras/iterm2/mellow.itermcolors`
