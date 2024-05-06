@@ -88,7 +88,7 @@ local set_groups = function()
     ["NonText"] = { fg = c.gray02 }, --'~' and '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line).
     ["Normal"] = { fg = c.fg, bg = cfg.transparent and c.none or c.bg }, -- normal text
     ["NormalNC"] = { fg = c.fg, bg = cfg.transparent and c.none or c.bg_dark }, -- normal text
-    ["NormalFloat"] = { fg = c.white, bg = c.bg }, -- Normal text in floating windows.
+    ["NormalFloat"] = { fg = c.white, bg = c.gray00 }, -- Normal text in floating windows.
     ["FloatBorder"] = { fg = c.gray03, bg = c.bg }, -- Border of floating windows.
     ["Pmenu"] = { fg = c.white, bg = c.black }, -- Popup menu: normal item.
     ["PmenuSel"] = { fg = c.bright_white, bg = c.gray03 }, -- Popup menu: selected item.
@@ -162,6 +162,7 @@ local set_groups = function()
     ["@punctuation"] = { fg = c.gray06 },
     ["@punctuation.delimiter"] = { fg = c.gray06 },
     ["@punctuation.bracket"] = { fg = c.gray06 },
+    ["@punctuation.special"] = { fg = c.gray06 },
     ["@string.documentation"] = { fg = c.green, style = cfg.comment_style },
     ["@string.regex"] = { fg = c.blue },
     ["@string.escape"] = { fg = c.magenta },
@@ -209,7 +210,32 @@ local set_groups = function()
     ["@lsp.typemod.variable.defaultLibrary"] = { link = "@variable.builtin" },
     ["@lsp.typemod.variable.injected"] = { link = "@variable" },
 
+    ["@markup.heading"] = { fg = c.gray06, bold = true },
+    ["@markup.heading.1"] = { fg = c.gray06, bold = true, italic = true },
+    ["@markup.heading.1.marker"] = { link = "@comment" },
+    ["@markup.heading.2"] = { fg = c.gray06, bold = true, italic = true },
+    ["@markup.heading.2.marker"] = { link = "@comment" },
+    ["@markup.heading.3"] = { fg = c.gray06, bold = true, italic = true },
+    ["@markup.heading.3.marker"] = { link = "@comment" },
+    ["@markup.heading.4"] = { fg = c.gray06, bold = true, italic = true },
+    ["@markup.heading.4.marker"] = { link = "@comment" },
+    ["@markup.heading.5"] = { fg = c.gray06, bold = true, italic = true },
+    ["@markup.heading.5.marker"] = { link = "@comment" },
+    ["@markup.heading.6"] = { fg = c.gray06, bold = true, italic = true },
+    ["@markup.heading.6.marker"] = { link = "@comment" },
+    ["@markup.link"] = { fg = c.gray06 },
+    ["@markup.link.label"] = { fg = c.cyan },
+    ["@markup.link.url"] = { fg = c.blue },
+    ["@markup.list"] = { fg = c.gray05, bold = true },
+    ["@markup.list.checked"] = { fg = c.gray05 },
+    ["@markup.list.unchecked"] = { fg = c.gray05 },
+    ["@markup.raw.block"] = { fg = c.gray05 },
+    ["@markup.raw.delimiter"] = { fg = c.gray05 },
+    ["@markup.quote"] = { fg = c.gray06 },
+    ["@markup.strikethrough"] = { fg = c.gray04, strikethrough = true },
+
     -- Diagnostics
+    ["DiagnosticOk"] = { fg = c.green },
     ["DiagnosticError"] = { fg = c.red },
     ["DiagnosticWarn"] = { fg = c.yellow },
     ["DiagnosticInfo"] = { fg = c.blue },
@@ -328,6 +354,41 @@ local set_groups = function()
     ["TelescopePromptNormal"] = { fg = c.gray06, bg = c.gray01 },
     ["TelescopePromptCounter"] = { fg = c.gray04, bg = c.gray01 },
     ["TelescopeMatching"] = { fg = c.yellow, underline = true },
+    
+    -- Dap UI
+    ["DapUINormal"] = { link = "Normal" },
+    ["DapUIVariable"] = { link = "Normal" },
+    ["DapUIScope"] = { fg = c.blue },
+    ["DapUIType"] = { fg = c.magenta },
+    ["DapUIValue"] = { link = "Normal" },
+    ["DapUIModifiedValue"] = { fg = c.blue, bold = true },
+    ["DapUIDecoration"] = { fg = c.blue },
+    ["DapUIThread"] = { fg = c.bright_green },
+    ["DapUIStoppedThread"] = { fg = c.blue },
+    ["DapUIFrameName"] = { link = "Normal" },
+    ["DapUISource"] = { fg = c.magenta },
+    ["DapUILineNumber"] = { fg = c.blue },
+    ["DapUIFloatNormal"] = { link = "NormalFloat" },
+    ["DapUIFloatBorder"] = { fg = c.blue },
+    ["DapUIWatchesEmpty"] = { fg = c.bright_cyan },
+    ["DapUIWatchesValue"] = { fg = c.bright_green },
+    ["DapUIWatchesError"] = { fg = c.bright_cyan },
+    ["DapUIBreakpointsPath"] = { fg = c.blue },
+    ["DapUIBreakpointsInfo"] = { fg = c.bright_green },
+    ["DapUIBreakpointsCurrentLine"] = { fg = c.bright_green, bold = true },
+    ["DapUIBreakpointsLine"] = { link = "DapUILineNumber" },
+    ["DapUIBreakpointsDisabledLine"] = { fg = c.gray03 },
+    ["DapUICurrentFrameName"] = { link = "DapUIBreakpointsCurrentLine" },
+    ["DapUIStepOver"] = { fg = c.blue },
+    ["DapUIStepInto"] = { fg = c.blue },
+    ["DapUIStepBack"] = { fg = c.blue },
+    ["DapUIStepOut"] = { fg = c.blue },
+    ["DapUIStop"] = { fg = c.bright_cyan },
+    ["DapUIPlayPause"] = { fg = c.bright_green },
+    ["DapUIRestart"] = { fg = c.bright_green },
+    ["DapUIUnavailable"] = { fg = c.gray03 },
+    ["DapUIWinSelect"] = { fg = c.cyan, bold = true },
+    ["DapUIEndofBuffer"] = { link = "EndofBuffer" },
 
     -- Flash
     ["FlashBackdrop"] = { link = "Comment" },
