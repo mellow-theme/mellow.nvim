@@ -62,7 +62,7 @@ local set_groups = function()
 
     -- Highlighting Groups (descriptions and ordering from ` =h highlight-groups`) {{{
     ["ColorColumn"] = { bg = c.gray01 }, -- used for the columns set with 'colorcolumn'
-    ["Conceal"] = { fg = c.gray01 }, -- placeholder characters substituted for concealed text (see 'conceallevel')
+    ["Conceal"] = { fg = c.gray06 }, -- placeholder characters substituted for concealed text (see 'conceallevel')
     ["Cursor"] = { fg = c.black, bg = c.fg }, -- the character under the cursor
     ["lCursor"] = { fg = c.black, bg = c.fg }, -- the character under the cursor
     ["CursorIM"] = { fg = c.black, bg = c.fg }, -- the character under the cursor
@@ -72,6 +72,7 @@ local set_groups = function()
     ["DiffChange"] = { fg = c.yellow, underline = true }, -- diff mode: Changed line
     ["DiffDelete"] = { bg = c.red, fg = c.black }, -- diff mode: Deleted line
     ["DiffText"] = { bg = c.yellow, fg = c.black }, -- diff mode: Changed text within a changed line
+    ["EndOfBuffer"] = { fg = c.gray02 }, -- '~' and '@' at the end of the window
     ["ErrorMsg"] = { fg = c.red }, -- error messages on the command line
     ["VertSplit"] = { fg = c.gray02 }, -- the column separating vertically split windows
     ["WinSeparator"] = { fg = c.gray02 }, -- the column separating vertically split windows
@@ -85,7 +86,7 @@ local set_groups = function()
     ["MatchParen"] = { fg = c.yellow, underline = true }, -- The character under the cursor or just before it, if it is a paired bracket, and its match.
     ["ModeMsg"] = { fg = c.gray03, bold = true }, --' showmode' message (e.g., "-- INSERT --")
     ["MoreMsg"] = { fg = c.bright_magenta }, -- more-prompt
-    ["NonText"] = { fg = c.gray02 }, --'~' and '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line).
+    ["NonText"] = { fg = c.gray05 }, -- characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line).
     ["Normal"] = { fg = c.fg, bg = cfg.transparent and c.none or c.bg }, -- normal text
     ["NormalNC"] = { fg = c.fg, bg = cfg.transparent and c.none or c.bg_dark }, -- normal text
     ["NormalFloat"] = { fg = c.white, bg = c.gray00 }, -- Normal text in floating windows.
@@ -354,7 +355,7 @@ local set_groups = function()
     ["TelescopePromptNormal"] = { fg = c.gray06, bg = c.gray01 },
     ["TelescopePromptCounter"] = { fg = c.gray04, bg = c.gray01 },
     ["TelescopeMatching"] = { fg = c.yellow, underline = true },
-    
+
     -- Dap UI
     ["DapUINormal"] = { link = "Normal" },
     ["DapUIVariable"] = { link = "Normal" },
