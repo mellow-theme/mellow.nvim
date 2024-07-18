@@ -399,6 +399,11 @@ local set_groups = function()
     ["FlashMatch"] = { link = "Search" },
     ["FlashPrompt"] = { link = "MsgArea" },
     ["FlashPromptIcon"] = { link = "Special" },
+
+    -- Illuminate
+    ["IlluminatedWordText"] = { bg = c.gray03 },
+    ["IlluminatedWordRead"] = { bg = c.gray03 },
+    ["IlluminatedWordWrite"] = { bg = c.gray03 },
   }
 
   for name, val in pairs(highlights) do
