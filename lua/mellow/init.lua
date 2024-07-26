@@ -403,8 +403,8 @@ local set_groups = function()
 
   -- if the user has specified any overrides insert them into the highlight
   -- table over any existing ones
-  if cfg.overrides and type(cfg.overrides) == "table" then
-    for name, val in pairs(cfg.overrides) do
+  if cfg.highlight_overrides and type(cfg.highlight_overrides) == "table" then
+    for name, val in pairs(cfg.highlight_overrides) do
       if type(val) == "table" then
         highlights[name] = val
       end
