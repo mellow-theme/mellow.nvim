@@ -401,6 +401,16 @@ local set_groups = function()
     ["FlashPromptIcon"] = { link = "Special" },
   }
 
+  -- if the user has specified any overrides insert them into the highlight
+  -- table over any existing ones
+  if cfg.overrides and type(cfg.overrides) == "table" then
+    for name, val in pairs(cfg.overrides) do
+      if type(val) == "table" then
+        highlights[name] = val
+      end
+    end
+  end
+
   for name, val in pairs(highlights) do
     if val.style then
       if type(val.style) == "table" then
