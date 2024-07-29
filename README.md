@@ -52,6 +52,7 @@ A soothing dark color scheme for neovim.
 - [nvim-notify](https://github.com/rcarriga/nvim-notify)
 - [flash.nvim](https://github.com/folke/flash.nvim)
 - [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
+- [vim-illuminate](https://github.com/RRethy/vim-illuminate)
 
 ## Requirements
 
