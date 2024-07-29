@@ -406,6 +406,16 @@ local set_groups = function()
     ["IlluminatedWordWrite"] = { bg = c.gray03 },
   }
 
+  -- if the user has specified any overrides insert them into the highlight
+  -- table over any existing ones
+  if cfg.highlight_overrides and type(cfg.highlight_overrides) == "table" then
+    for name, val in pairs(cfg.highlight_overrides) do
+      if type(val) == "table" then
+        highlights[name] = val
+      end
+    end
+  end
+
   for name, val in pairs(highlights) do
     if val.style then
       if type(val.style) == "table" then
