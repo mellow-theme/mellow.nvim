@@ -144,6 +144,7 @@ Color themes for various applications and terminal emulators.
 - iterm2 - `extras/iterm2/mellow.itermcolors`
 - terminator - `extras/terminator/mellow.config`
 - foot - `extras/foot/mellow.ini`
+- warp - `extras/warp/mellow.yaml`
 - windows-terminal - extras/windows_terminal/mellow.json
 
 ### Helix
