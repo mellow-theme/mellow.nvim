@@ -24,6 +24,14 @@ local set_terminal_colors = function()
   vim.g.terminal_color_foreground = c.fg
 end
 
+local apply_highlights_overrides = function(highlights, overrides)
+  for name, val in pairs(overrides) do
+    if type(val) == "table" then
+      highlights[name] = val
+    end
+  end
+end
+
 local set_groups = function()
   local highlights = {
     ["Comment"] = { fg = c.gray05, style = cfg.comment_style }, -- any comment
@@ -77,8 +85,8 @@ local set_groups = function()
     ["VertSplit"] = { fg = c.gray02 }, -- the column separating vertically split windows
     ["WinSeparator"] = { fg = c.gray02 }, -- the column separating vertically split windows
     ["Folded"] = { fg = c.gray04 }, -- line used for closed folds
-    ["FoldColumn"] = { bg = cfg.transparent and c.none or c.bg, fg = c.gray05 }, -- column where folds are displayed
-    ["SignColumn"] = { bg = cfg.transparent and c.none or c.bg, fg = c.gray05 }, -- column where signs are displayed
+    ["FoldColumn"] = { bg = c.bg, fg = c.gray05 }, -- column where folds are displayed
+    ["SignColumn"] = { bg = c.bg, fg = c.gray05 }, -- column where signs are displayed
     ["IncSearch"] = { fg = c.black, bg = c.yellow }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     ["CurSearch"] = { fg = c.black, bg = c.yellow }, -- 'cursearch' highlighting; also used for the text replaced with ":s///c"
     ["LineNr"] = { fg = c.gray04 }, -- Line number for " =number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
@@ -87,8 +95,8 @@ local set_groups = function()
     ["ModeMsg"] = { fg = c.gray03, bold = true }, --' showmode' message (e.g., "-- INSERT --")
     ["MoreMsg"] = { fg = c.bright_magenta }, -- more-prompt
     ["NonText"] = { fg = c.gray05 }, -- characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line).
-    ["Normal"] = { fg = c.fg, bg = cfg.transparent and c.none or c.bg }, -- normal text
-    ["NormalNC"] = { fg = c.fg, bg = cfg.transparent and c.none or c.bg_dark }, -- normal text
+    ["Normal"] = { fg = c.fg, bg = c.bg }, -- normal text
+    ["NormalNC"] = { fg = c.fg, bg = c.bg_dark }, -- normal text
     ["NormalFloat"] = { fg = c.white, bg = c.gray00 }, -- Normal text in floating windows.
     ["FloatBorder"] = { fg = c.gray03, bg = c.bg }, -- Border of floating windows.
     ["Pmenu"] = { fg = c.white, bg = c.black }, -- Popup menu: normal item.
@@ -319,11 +327,11 @@ local set_groups = function()
 
     -- Notify
     ["NotifyBackground"] = { fg = c.white, bg = c.bg },
-    ["NotifyERRORBorder"] = { fg = c.red, bg = cfg.transparent and c.none or c.bg },
-    ["NotifyWARNBorder"] = { fg = c.yellow, bg = cfg.transparent and c.none or c.bg },
-    ["NotifyINFOBorder"] = { fg = c.blue, bg = cfg.transparent and c.none or c.bg },
-    ["NotifyDEBUGBorder"] = { fg = c.gray06, bg = cfg.transparent and c.none or c.bg },
-    ["NotifyTRACEBorder"] = { fg = c.cyan, bg = cfg.transparent and c.none or c.bg },
+    ["NotifyERRORBorder"] = { fg = c.red, bg = c.bg },
+    ["NotifyWARNBorder"] = { fg = c.yellow, bg = c.bg },
+    ["NotifyINFOBorder"] = { fg = c.blue, bg = c.bg },
+    ["NotifyDEBUGBorder"] = { fg = c.gray06, bg = c.bg },
+    ["NotifyTRACEBorder"] = { fg = c.cyan, bg = c.bg },
     ["NotifyERRORIcon"] = { fg = c.bright_red },
     ["NotifyWARNIcon"] = { fg = c.bright_yellow },
     ["NotifyINFOIcon"] = { fg = c.bright_blue },
@@ -334,11 +342,11 @@ local set_groups = function()
     ["NotifyINFOTitle"] = { fg = c.bright_blue },
     ["NotifyDEBUGTitle"] = { fg = c.gray05 },
     ["NotifyTRACETitle"] = { fg = c.bright_cyan },
-    ["NotifyERRORBody"] = { fg = c.white, bg = cfg.transparent and c.none or c.bg },
-    ["NotifyWARNBody"] = { fg = c.white, bg = cfg.transparent and c.none or c.bg },
-    ["NotifyINFOBody"] = { fg = c.white, bg = cfg.transparent and c.none or c.bg },
-    ["NotifyDEBUGBody"] = { fg = c.white, bg = cfg.transparent and c.none or c.bg },
-    ["NotifyTRACEBody"] = { fg = c.white, bg = cfg.transparent and c.none or c.bg },
+    ["NotifyERRORBody"] = { fg = c.white, bg = c.bg },
+    ["NotifyWARNBody"] = { fg = c.white, bg = c.bg },
+    ["NotifyINFOBody"] = { fg = c.white, bg = c.bg },
+    ["NotifyDEBUGBody"] = { fg = c.white, bg = c.bg },
+    ["NotifyTRACEBody"] = { fg = c.white, bg = c.bg },
 
     -- NeoTree
     ["NeoTreeFloatBorder"] = { fg = c.gray03, bg = c.bg },
@@ -406,14 +414,46 @@ local set_groups = function()
     ["IlluminatedWordWrite"] = { bg = c.gray03 },
   }
 
+  local transparent_highlights = {
+    ["FoldColumn"] = { bg = c.none, fg = c.gray05 },
+    ["SignColumn"] = { bg = c.none, fg = c.gray05 },
+    ["Normal"] = { fg = c.fg, bg = c.none },
+    ["NormalNC"] = { fg = c.fg, bg = c.none },
+    ["NormalFloat"] = { fg = c.fg, bg = c.none },
+    ["FloatBorder"] = { fg = c.white, bg = c.none },
+
+    -- Notify
+    ["NotifyERRORBorder"] = { fg = c.red, bg = c.none },
+    ["NotifyWARNBorder"] = { fg = c.yellow, bg = c.none },
+    ["NotifyINFOBorder"] = { fg = c.blue, bg = c.none },
+    ["NotifyDEBUGBorder"] = { fg = c.gray06, bg = c.none },
+    ["NotifyTRACEBorder"] = { fg = c.cyan, bg = c.none },
+    ["NotifyERRORBody"] = { fg = c.white, bg = c.none },
+    ["NotifyWARNBody"] = { fg = c.white, bg = c.none },
+    ["NotifyINFOBody"] = { fg = c.white, bg = c.none },
+    ["NotifyDEBUGBody"] = { fg = c.white, bg = c.none },
+    ["NotifyTRACEBody"] = { fg = c.white, bg = c.none },
+
+    -- Telescope
+    ["TelescopeBorder"] = { fg = c.white, bg = c.none },
+    ["TelescopeNormal"] = { fg = c.fg, bg = c.none },
+    ["TelescopePreviewTitle"] = { fg = c.green, bg = c.none, bold = true },
+    ["TelescopeResultsTitle"] = { fg = c.fg, bg = c.none, bold = true },
+    ["TelescopePromptTitle"] = { fg = c.cyan, bg = c.none, bold = true },
+    ["TelescopePromptBorder"] = { fg = c.white, bg = c.none },
+    ["TelescopePromptNormal"] = { fg = c.gray06, bg = c.none },
+    ["TelescopePromptCounter"] = { fg = c.white, bg = c.none },
+    ["TelescopeMatching"] = { fg = c.yellow, underline = true },
+  }
+
+  if cfg.transparent then
+    apply_highlights_overrides(highlights, transparent_highlights)
+  end
+
   -- if the user has specified any overrides insert them into the highlight
   -- table over any existing ones
   if cfg.highlight_overrides and type(cfg.highlight_overrides) == "table" then
-    for name, val in pairs(cfg.highlight_overrides) do
-      if type(val) == "table" then
-        highlights[name] = val
-      end
-    end
+    apply_highlights_overrides(highlights, cfg.highlight_overrides)
   end
 
   for name, val in pairs(highlights) do
