@@ -444,6 +444,16 @@ local set_groups = function()
     ["TelescopePromptNormal"] = { fg = c.gray06, bg = c.none },
     ["TelescopePromptCounter"] = { fg = c.white, bg = c.none },
     ["TelescopeMatching"] = { fg = c.yellow, underline = true },
+
+    -- NeoGit
+    ["NeogitChangeAdded"] = { link = "diffAdded" },
+    ["NeogitChangeDeleted"] = { link = "diffRemoved" },
+    ["NeogitChangeModified"] = { link = "diffChanged" },
+    ["NeogitChangeNewFile"] = { link = "diffNewFile" },
+    ["NeogitDiffAdd"] = { link = "DiffAdd" },
+    ["NeogitDiffDelete"] = { link = "DiffDelete" },
+    ["NeogitDiffAddHighlight"] = { link = "NeogitDiffAdd" },
+    ["NeogitDiffDeleteHighlight"] = { link = "NeogitDiffDelete" },
   }
 
   if cfg.transparent then
