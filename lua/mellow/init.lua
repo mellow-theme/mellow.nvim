@@ -248,11 +248,11 @@ local set_groups = function()
     ["DiagnosticError"] = { fg = c.red },
     ["DiagnosticWarn"] = { fg = c.yellow },
     ["DiagnosticInfo"] = { fg = c.blue },
-    ["DiagnosticHint"] = { fg = c.cyan },
+    ["DiagnosticHint"] = { fg = c.blue },
     ["DiagnosticUnderlineError"] = { fg = c.red, underline = true },
     ["DiagnosticUnderlineWarn"] = { fg = c.yellow, underline = true },
     ["DiagnosticUnderlineInfo"] = { fg = c.blue, underline = true },
-    ["DiagnosticUnderlineHint"] = { fg = c.cyan, underline = true },
+    ["DiagnosticUnderlineHint"] = { fg = c.blue, underline = true },
 
     -- Neovim's built-in language server client
     ["LspReferenceWrite"] = { fg = c.blue, underline = true },
