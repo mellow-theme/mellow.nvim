@@ -111,8 +111,8 @@ local set_groups = function()
     ["SpellCap"] = { fg = c.yellow }, -- Word that should start with a capital. This will be combined with the highlighting used otherwise.
     ["SpellLocal"] = { fg = c.yellow }, -- Word that is recognized by the spellchecker as one that is used in another region. This will be combined with the highlighting used otherwise.
     ["SpellRare"] = { fg = c.yellow }, -- Word that is recognized by the spellchecker as one that is hardly ever used. spell This will be combined with the highlighting used otherwise.
-    ["StatusLine"] = { fg = c.white, bg = c.gray01 }, -- status line of current window
-    ["StatusLineNC"] = { fg = c.bg_dark }, -- status lines of not-current windows Note = if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+    ["StatusLine"] = { fg = c.white, bg = c.gray02 }, -- status line of current window
+    ["StatusLineNC"] = { fg = c.gray05, bg = c.gray02 }, -- status lines of not-current windows Note = if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
     ["StatusLineTerm"] = { fg = c.white, bg = c.gray01 }, -- status line of current :terminal window
     ["StatusLineTermNC"] = { fg = c.gray05 }, -- status line of non-current  =terminal window
     ["TabLine"] = { fg = c.gray05 }, -- tab pages line, not active tab page label
