@@ -188,6 +188,11 @@ local set_groups = function()
     ["@constructor.javascript"] = { fg = c.cyan },
     ["@keyword.clojure"] = { fg = c.bright_cyan, style = cfg.keyword_style },
 
+    -- Treesitter Context
+    ["TreesitterContext"] = { bg = c.gray01 },
+    ["TreesitterContextBottom"] = { sp = c.gray03, underdotted = true },
+    ["TreesitterContextLineNumber"] = { fg = c.gray04, bg = c.gray01 },
+
     -- LSP Semantic Token Groups
     ["@lsp.type.boolean"] = { link = "@boolean" },
     ["@lsp.type.builtinType"] = { link = "@type.builtin" },
