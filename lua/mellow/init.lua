@@ -285,6 +285,10 @@ local set_groups = function()
     ["HopCursor"] = { fg = c.bright_cyan },
     ["HopPreview"] = { fg = c.bright_blue },
 
+    -- Leap
+    ["LeapLabel"] = { fg = c.bright_yellow, bold = true },
+    ["LeapBackdrop"] = { fg = c.gray05 },
+
     -- Blink
     ["BlinkCmpLabelMatch"] = { fg = c.cyan, bold = true },
 
