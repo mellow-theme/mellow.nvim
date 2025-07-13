@@ -283,10 +283,13 @@ local set_groups = function()
     ["HopCursor"] = { fg = c.bright_cyan },
     ["HopPreview"] = { fg = c.bright_blue },
 
+    -- Blink
+    ["BlinkCmpLabelMatch"] = { fg = c.cyan, bold = true },
+
     -- Cmp
     ["CmpItemAbbrDeprecated"] = { fg = c.gray06, strikethrough = true },
-    ["CmpItemAbbrMatch"] = { fg = c.blue, bold = true },
-    ["CmpItemAbbrMatchFuzzy"] = { fg = c.blue, bold = true },
+    ["CmpItemAbbrMatch"] = { fg = c.cyan, bold = true },
+    ["CmpItemAbbrMatchFuzzy"] = { fg = c.cyan, bold = true },
     ["CmpItemMenu"] = { fg = c.gray05 },
     ["CmpItemKindText"] = { fg = c.gray06 },
     ["CmpItemKindFunction"] = { fg = c.cyan },
