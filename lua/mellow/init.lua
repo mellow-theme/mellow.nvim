@@ -182,6 +182,7 @@ local set_groups = function()
     ["@type.builtin"] = { fg = c.magenta },
     ["@variable"] = { fg = c.fg, style = cfg.variable_style },
     ["@variable.builtin"] = { fg = c.blue, style = cfg.variable_style },
+    ["@variable.member"] = { fg = c.white },
     ["@variable.parameter"] = { fg = c.magenta, style = cfg.variable_style },
     -- Tree sitter language specific overrides
     ["@constructor.javascript"] = { fg = c.cyan },
@@ -205,6 +206,7 @@ local set_groups = function()
     ["@lsp.type.selfKeyword"] = { link = "@variable.builtin" },
     ["@lsp.type.string.rust"] = { link = "@string" },
     ["@lsp.type.typeAlias"] = { link = "@type.definition" },
+    ["@lsp.type.variable"] = {}, -- disable semantic token and use treesitter instead
     ["@lsp.type.unresolvedReference"] = { undercurl = true, sp = c.error },
     ["@lsp.typemod.class.defaultLibrary"] = { link = "@type.builtin" },
     ["@lsp.typemod.enum.defaultLibrary"] = { link = "@type.builtin" },
