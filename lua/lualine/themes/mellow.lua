@@ -1,4 +1,5 @@
-local colors = require("mellow.colors").dark
+local cfg = require("mellow.config").config
+local colors = require("mellow.colors")[cfg.variant]
 
 return {
   normal = {
