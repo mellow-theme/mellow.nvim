@@ -111,8 +111,8 @@ local set_groups = function()
     ["SpellCap"] = { fg = c.yellow }, -- Word that should start with a capital. This will be combined with the highlighting used otherwise.
     ["SpellLocal"] = { fg = c.yellow }, -- Word that is recognized by the spellchecker as one that is used in another region. This will be combined with the highlighting used otherwise.
     ["SpellRare"] = { fg = c.yellow }, -- Word that is recognized by the spellchecker as one that is hardly ever used. spell This will be combined with the highlighting used otherwise.
-    ["StatusLine"] = { fg = c.white, bg = c.gray01 }, -- status line of current window
-    ["StatusLineNC"] = { fg = c.bg_dark }, -- status lines of not-current windows Note = if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+    ["StatusLine"] = { fg = c.white, bg = c.gray02 }, -- status line of current window
+    ["StatusLineNC"] = { fg = c.gray05, bg = c.gray02 }, -- status lines of not-current windows Note = if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
     ["StatusLineTerm"] = { fg = c.white, bg = c.gray01 }, -- status line of current :terminal window
     ["StatusLineTermNC"] = { fg = c.gray05 }, -- status line of non-current  =terminal window
     ["TabLine"] = { fg = c.gray05 }, -- tab pages line, not active tab page label
@@ -182,10 +182,16 @@ local set_groups = function()
     ["@type.builtin"] = { fg = c.magenta },
     ["@variable"] = { fg = c.fg, style = cfg.variable_style },
     ["@variable.builtin"] = { fg = c.blue, style = cfg.variable_style },
+    ["@variable.member"] = { fg = c.white },
     ["@variable.parameter"] = { fg = c.magenta, style = cfg.variable_style },
     -- Tree sitter language specific overrides
     ["@constructor.javascript"] = { fg = c.cyan },
     ["@keyword.clojure"] = { fg = c.bright_cyan, style = cfg.keyword_style },
+
+    -- Treesitter Context
+    ["TreesitterContext"] = { bg = c.gray01 },
+    ["TreesitterContextBottom"] = { sp = c.gray03, underdotted = true },
+    ["TreesitterContextLineNumber"] = { fg = c.gray04, bg = c.gray01 },
 
     -- LSP Semantic Token Groups
     ["@lsp.type.boolean"] = { link = "@boolean" },
@@ -205,6 +211,7 @@ local set_groups = function()
     ["@lsp.type.selfKeyword"] = { link = "@variable.builtin" },
     ["@lsp.type.string.rust"] = { link = "@string" },
     ["@lsp.type.typeAlias"] = { link = "@type.definition" },
+    ["@lsp.type.variable"] = {}, -- disable semantic token and use treesitter instead
     ["@lsp.type.unresolvedReference"] = { undercurl = true, sp = c.error },
     ["@lsp.typemod.class.defaultLibrary"] = { link = "@type.builtin" },
     ["@lsp.typemod.enum.defaultLibrary"] = { link = "@type.builtin" },
@@ -248,11 +255,11 @@ local set_groups = function()
     ["DiagnosticError"] = { fg = c.red },
     ["DiagnosticWarn"] = { fg = c.yellow },
     ["DiagnosticInfo"] = { fg = c.blue },
-    ["DiagnosticHint"] = { fg = c.cyan },
+    ["DiagnosticHint"] = { fg = c.blue },
     ["DiagnosticUnderlineError"] = { fg = c.red, underline = true },
     ["DiagnosticUnderlineWarn"] = { fg = c.yellow, underline = true },
     ["DiagnosticUnderlineInfo"] = { fg = c.blue, underline = true },
-    ["DiagnosticUnderlineHint"] = { fg = c.cyan, underline = true },
+    ["DiagnosticUnderlineHint"] = { fg = c.blue, underline = true },
 
     -- Neovim's built-in language server client
     ["LspReferenceWrite"] = { fg = c.blue, underline = true },
@@ -283,10 +290,17 @@ local set_groups = function()
     ["HopCursor"] = { fg = c.bright_cyan },
     ["HopPreview"] = { fg = c.bright_blue },
 
+    -- Leap
+    ["LeapLabel"] = { fg = c.bright_yellow, bold = true },
+    ["LeapBackdrop"] = { fg = c.gray05 },
+
+    -- Blink
+    ["BlinkCmpLabelMatch"] = { fg = c.cyan, bold = true },
+
     -- Cmp
     ["CmpItemAbbrDeprecated"] = { fg = c.gray06, strikethrough = true },
-    ["CmpItemAbbrMatch"] = { fg = c.blue, bold = true },
-    ["CmpItemAbbrMatchFuzzy"] = { fg = c.blue, bold = true },
+    ["CmpItemAbbrMatch"] = { fg = c.cyan, bold = true },
+    ["CmpItemAbbrMatchFuzzy"] = { fg = c.cyan, bold = true },
     ["CmpItemMenu"] = { fg = c.gray05 },
     ["CmpItemKindText"] = { fg = c.gray06 },
     ["CmpItemKindFunction"] = { fg = c.cyan },
@@ -412,6 +426,38 @@ local set_groups = function()
     ["IlluminatedWordText"] = { bg = c.gray03 },
     ["IlluminatedWordRead"] = { bg = c.gray03 },
     ["IlluminatedWordWrite"] = { bg = c.gray03 },
+
+    -- Mini
+    ["MiniClueNextKeyWithPostkeys"] = { fg = c.cyan },
+    ["MiniFilesCursorLine"] = { bg = c.gray02, bold = true },
+    ["MiniFilesTitleFocused"] = { fg = c.bright_green, bold = true },
+    ["MiniMapNormal"] = { fg = c.gray04, bg = c.gray01 },
+    ["MiniPickMatchRanges"] = { fg = c.cyan, bold = true },
+    ["MiniPickMatchCurrent"] = { bg = c.gray02, bold = true },
+    ["MiniPickPrompt"] = { fg = c.blue, bold = true },
+    ["MiniPickPromptPrefix"] = { fg = c.magenta, bold = true },
+    ["MiniStarterInactive"] = { fg = c.gray04 },
+    ["MiniStarterItemBullet"] = { fg = c.gray04, bold = true },
+    ["MiniStarterItemPrefix"] = { fg = c.magenta, bold = true },
+    ["MiniStarterQuery"] = { fg = c.cyan, bold = true },
+    ["MiniStarterSection"] = { fg = c.blue, bold = true },
+    ["MiniStarterHeader"] = { fg = c.red, bold = true },
+    ["MiniStatuslineModeNormal"] = { fg = c.bg, bg = c.cyan, bold = true },
+    ["MiniStatuslineModeInsert"] = { fg = c.bg, bg = c.blue, bold = true },
+    ["MiniStatuslineModeVisual"] = { fg = c.bg, bg = c.magenta, bold = true },
+    ["MiniStatuslineModeCommand"] = { fg = c.bg, bg = c.yellow, bold = true },
+    ["MiniStatuslineModeReplace"] = { fg = c.bg, bg = c.red, bold = true },
+    ["MiniStatuslineModeTerminal"] = { fg = c.bg, bg = c.green, bold = true },
+    ["MiniStatuslineModeOther"] = { fg = c.bg, bg = c.green, bold = true },
+    ["MiniStatuslineFileinfo"] = { fg = c.gray06, bg = c.gray03 },
+    ["MiniStatuslineDevinfo"] = { fg = c.gray06, bg = c.gray03 },
+    ["MiniStatuslineFilename"] = { fg = c.white, bold = true },
+    ["MiniTablineCurrent"] = { fg = c.blue, bg = c.black, bold = true },
+    ["MiniTablineVisible"] = { fg = c.gray07, bg = c.black },
+    ["MiniTablineModifiedCurrent"] = { fg = c.black, bg = c.blue, bold = true },
+    ["MiniTablineModifiedHidden"] = { fg = c.black, bg = c.gray05, bold = true },
+    ["MiniTablineModifiedVisible"] = { fg = c.black, bg = c.gray07, bold = true },
+    ["MiniTablineTabpagesection"] = { fg = c.black, bg = c.green, bold = true },
   }
 
   local transparent_highlights = {

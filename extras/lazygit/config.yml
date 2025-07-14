@@ -1,0 +1,31 @@
+git:
+  paging:
+    colorArg: always
+    # Don't forget to setup delta to use 'mellow-barbet' theme.
+    pager: delta --dark --paging=never
+gui:
+  authorColors:
+    "*": "#E6B99D"
+  nerdFontsVersion: "3"
+  theme:
+    activeBorderColor:
+      - "#ACA1CF"
+      - "bold"
+    inactiveBorderColor:
+      - "#57575F"
+    optionsTextColor:
+      - "#90B99F"
+    selectedLineBgColor:
+      - "#1B1B1D"
+    cherryPickedCommitFgColor:
+      - "#ACA1CF"
+    cherryPickedCommitBgColor:
+      - "bg"
+    markedBaseCommitFgColor:
+      - "#ACA1CF"
+    markedBaseCommitBgColor:
+      - "bg"
+    unstagedChangesColor:
+      - "#EA83A5"
+    defaultFgColor:
+      - "#C9C7CD"
