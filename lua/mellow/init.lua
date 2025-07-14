@@ -179,7 +179,7 @@ local set_groups = function()
     ["@tag"] = { fg = c.cyan },
     ["@tag.attribute"] = { fg = c.bright_blue, italic = true },
     ["@tag.delimiter"] = { fg = c.gray06 },
-    ["@type.builtin"] = { fg = c.magenta },
+    ["@type.builtin"] = { fg = c.bright_red },
     ["@variable"] = { fg = c.fg, style = cfg.variable_style },
     ["@variable.builtin"] = { fg = c.blue, style = cfg.variable_style },
     ["@variable.member"] = { fg = c.white },
