@@ -368,12 +368,12 @@ local set_groups = function()
     ["NeoTreeTitleBar"] = { fg = c.gray05, bg = c.gray01 },
 
     -- Telescope
-    ["TelescopeBorder"] = { fg = c.bg, bg = c.bg },
+    ["TelescopeBorder"] = { fg = c.gray03, bg = c.bg },
     ["TelescopeNormal"] = { fg = c.fg, bg = c.bg },
     ["TelescopePreviewTitle"] = { fg = c.black, bg = c.green, bold = true },
     ["TelescopeResultsTitle"] = { fg = c.bg, bg = c.bg },
     ["TelescopePromptTitle"] = { fg = c.black, bg = c.cyan, bold = true },
-    ["TelescopePromptBorder"] = { fg = c.gray01, bg = c.gray01 },
+    ["TelescopePromptBorder"] = { fg = c.gray03, bg = c.gray01 },
     ["TelescopePromptNormal"] = { fg = c.gray06, bg = c.gray01 },
     ["TelescopePromptCounter"] = { fg = c.gray04, bg = c.gray01 },
     ["TelescopeMatching"] = { fg = c.yellow, underline = true },
