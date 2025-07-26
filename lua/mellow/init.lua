@@ -434,6 +434,7 @@ local set_groups = function()
     ["MiniMapNormal"] = { fg = c.gray04, bg = c.gray01 },
     ["MiniPickMatchRanges"] = { fg = c.cyan, bold = true },
     ["MiniPickMatchCurrent"] = { bg = c.gray02, bold = true },
+    ["MiniPickMatchMarked"] = { bg = c.gray04 },
     ["MiniPickPrompt"] = { fg = c.blue, bold = true },
     ["MiniPickPromptPrefix"] = { fg = c.magenta, bold = true },
     ["MiniStarterInactive"] = { fg = c.gray04 },
