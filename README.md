@@ -133,19 +133,8 @@ colorscheme mellow
 
 ## Extras
 
-Color themes for various applications and terminal emulators.
-
-### Terminals
-
-- alacritty - `extras/alacritty/mellow.toml`
-- bat - `extras/bat/mellow.tmTheme`
-- kitty - `extras/kitty/mellow.conf`
-- wezterm - `extras/wezterm/colors/mellow.toml`
-- iterm2 - `extras/iterm2/mellow.itermcolors`
-- terminator - `extras/terminator/mellow.config`
-- foot - `extras/foot/mellow.ini`
-- warp - `extras/warp/mellow.yaml`
-- windows-terminal - extras/windows_terminal/mellow.json
+Extras have been moved to their own repositories which can be found in the
+github org [mellow-theme](https://github.com/mellow-theme/)
 
 ### Helix
 
@@ -155,10 +144,6 @@ Color themes for various applications and terminal emulators.
 
 - Grab it from the [marketplace](https://marketplace.visualstudio.com/items?itemName=kvrohit.mellow-theme).
 - (or) Search within VSCode extension page for "Mellow".
-
-### Eclipse
-
-- `extras/eclipse/mellow.xml`
 
 ### Delta
 
