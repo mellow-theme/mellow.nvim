@@ -453,11 +453,12 @@ local set_groups = function()
     ["MiniStatuslineFileinfo"] = { fg = c.gray06, bg = c.gray03 },
     ["MiniStatuslineDevinfo"] = { fg = c.gray06, bg = c.gray03 },
     ["MiniStatuslineFilename"] = { fg = c.white, bold = true },
-    ["MiniTablineCurrent"] = { fg = c.blue, bg = c.black, bold = true },
-    ["MiniTablineVisible"] = { fg = c.gray07, bg = c.black },
+    ["MiniTablineCurrent"] = { fg = c.blue, bg = c.bg, bold = true },
+    ["MiniTablineFill"] = { bg = c.black },
+    ["MiniTablineVisible"] = { fg = c.gray06, bg = c.black, bold = true },
     ["MiniTablineModifiedCurrent"] = { fg = c.black, bg = c.blue, bold = true },
     ["MiniTablineModifiedHidden"] = { fg = c.black, bg = c.gray05, bold = true },
-    ["MiniTablineModifiedVisible"] = { fg = c.black, bg = c.gray07, bold = true },
+    ["MiniTablineModifiedVisible"] = { fg = c.black, bg = c.gray06, bold = true },
     ["MiniTablineTabpagesection"] = { fg = c.black, bg = c.green, bold = true },
   }
 
